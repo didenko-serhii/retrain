@@ -1,13 +1,23 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import SearchBar from './search'
+import SearchBar from './search';
 
 const Map = dynamic(() => import('./map'), { ssr: false });
 
+type Train = {
+  trainNumber: number
+  departureDate: string
+  trainLocations?: {
+    location: [number, number]
+    speed: number
+    timestamp: string
+  }[]
+}
+
 export default function MapWrapper() {
-  const [trains, setTrains] = useState([])
-  const [focusedTrain, setFocusedTrain] = useState(null)
+  const [trains, setTrains] = useState<Train[]>([])
+  const [focusedTrain, setFocusedTrain] = useState<Train | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,9 +35,7 @@ export default function MapWrapper() {
 
   return (
     <div className="relative h-full w-full">
-      <div className="absolute top-4 left-4 z-[999]">
-        <SearchBar onSelect={setFocusedTrain} />
-      </div>
+      <SearchBar onSelect={setFocusedTrain} />
       <Map trains={trains} focusedTrain={focusedTrain} />
     </div>
   );

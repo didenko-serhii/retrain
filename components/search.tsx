@@ -44,7 +44,7 @@ export default function SearchBar({ onSelect }: { onSelect: (train: Train) => vo
           }}
         />
         {results.length > 0 && (
-          <ul className="absolute w-full mt-1 bg-white border rounded-lg shadow max-h-60 overflow-y-auto z-50">
+          <ul className="absolute w-full mt-1 bg-white border text-black rounded-lg shadow max-h-60 overflow-y-auto z-50">
             {results.map(train => (
               <li
                 key={`${train.trainNumber}-${train.departureDate}`}
