@@ -29,7 +29,7 @@ bun dev
 ```
 Visit `http://localhost:3000` in your browser to view the app.
 
-## 🐳 Run with Docker (Pull from Docker Hub)
+# 🐳 Run with Docker (Pull from Docker Hub)
 
 > Make sure [Docker](https://www.docker.com/) is installed on your system.
 
@@ -54,4 +54,4 @@ Visit `http://localhost:3000` in your browser to view the app.
 - 🐳 Docker
 
 # 👤 Author
-Made by Serhii Didenko with 💻
+Made by [Serhii Didenko](https://github.com/didenko-serhii) with 💻
