@@ -1,6 +1,7 @@
-"use client"
+'use client'
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { useEffect } from "react"
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import L from "leaflet"
 
@@ -12,7 +13,26 @@ const icon = L.divIcon({
   popupAnchor: [0, -10],
 })
 
-export default function Map({ trains }: { trains: any[] }) {
+function FlyToTrain({ train }: { train: any }) {
+  const map = useMap()
+
+  useEffect(() => {
+    if (train?.trainLocations?.[0]) {
+      const [lng, lat] = train.trainLocations[0].location
+      map.flyTo([lat, lng], 12)
+    }
+  }, [train, map])
+
+  return null
+}
+
+export default function Map({
+  trains,
+  focusedTrain,
+}: {
+  trains: any[]
+  focusedTrain?: any
+}) {
   return (
     <MapContainer
       center={[60.1699, 24.9384]}
@@ -47,6 +67,7 @@ export default function Map({ trains }: { trains: any[] }) {
           </Marker>
         )
       })}
+      {focusedTrain && <FlyToTrain train={focusedTrain} />}
     </MapContainer>
   )
 }

@@ -1,11 +1,13 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import SearchBar from './search'
 
 const Map = dynamic(() => import('./map'), { ssr: false });
 
 export default function MapWrapper() {
-  const [trains, setTrains] = useState([]);
+  const [trains, setTrains] = useState([])
+  const [focusedTrain, setFocusedTrain] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,5 +23,12 @@ export default function MapWrapper() {
     return () => clearInterval(interval);
   }, []);
 
-  return <Map trains={trains} />;
+  return (
+    <div className="relative h-full w-full">
+      <div className="absolute top-4 left-4 z-[999]">
+        <SearchBar onSelect={setFocusedTrain} />
+      </div>
+      <Map trains={trains} focusedTrain={focusedTrain} />
+    </div>
+  );
 }
