@@ -1,9 +1,12 @@
 'use client';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import SearchBar from './search';
+import { SearchBar } from './search';
 
-const Map = dynamic(() => import('./map'), { ssr: false });
+const Map = dynamic(() =>
+  import('./map').then((mod) => ({ default: mod.Map })),
+  { ssr: false }
+)
 
 type Train = {
   trainNumber: number
@@ -15,7 +18,7 @@ type Train = {
   }[]
 }
 
-export default function MapWrapper() {
+export const MapWrapper = () => {
   const [trains, setTrains] = useState<Train[]>([])
   const [focusedTrain, setFocusedTrain] = useState<Train | null>(null)
 

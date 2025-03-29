@@ -6,7 +6,7 @@ type Train = {
   departureDate: string
 }
 
-export default function SearchBar({ onSelect }: { onSelect: (train: Train) => void }) {
+export const SearchBar = ({ onSelect }: { onSelect: (train: Train) => void }) => {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<Train[]>([])
   const [selected, setSelected] = useState<Train | null>(null)

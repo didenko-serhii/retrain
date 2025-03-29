@@ -1,5 +1,6 @@
-// app/page.tsx
-import MapWrapper from '@/components/map-wrapper';
+import { MapWrapper } from "@/components/map-wrapper";
+
+
 
 export default function Home() {
   return (
