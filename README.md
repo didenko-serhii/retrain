@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚄 Retrain – Real-Time Train Tracker
 
-## Getting Started
+A real-time train tracker for Finland using **Next.js 15**, **Leaflet**, **Tailwind CSS 4**, **Bun**, and the [DigiTraffic GraphQL API](https://rata.digitraffic.fi/).
 
-First, run the development server:
+## ⚡ Quick Start (Bun)
+
+> Make sure [Bun](https://bun.sh/) is installed on your system.
+
+### 🔁 Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/didenko-serhii/retrain.git
+cd retrain
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 📦 Install Dependencies
+```bash
+bun install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# ⚙️ Create Environment File
+```.env
+NEXT_PUBLIC_URL=https://rata.digitraffic.fi/api/v2/graphql/graphql
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 🚀 Start the Development Server
+```bash
+bun dev
+```
+Visit `http://localhost:3000` in your browser to view the app.
 
-## Learn More
+## 🐳 Run with Docker (Pull from Docker Hub)
 
-To learn more about Next.js, take a look at the following resources:
+> Make sure [Docker](https://www.docker.com/) is installed on your system.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📥 Pull the Image
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+docker pull srgdd0/retrain:latest
+```
 
-## Deploy on Vercel
+# ▶️ Run the Container
+```bash
+docker run -p 3000:3000 srgdd0/retrain:latest
+```
+Visit `http://localhost:3000` in your browser to view the app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#📚 Tech Stack
+- ⚙️ Next.js 15
+- 🚅 Bun
+- 🗺 React Leaflet & OpenStreetMap
+- 🎨 Tailwind CSS 4
+- 🔮 DigiTraffic GraphQL API
+- 🐳 Docker
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 👤 Author
+Made by Serhii Didenko with 💻
