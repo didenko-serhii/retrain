@@ -13,17 +13,17 @@ git clone https://github.com/didenko-serhii/retrain.git
 cd retrain
 ```
 
-# 📦 Install Dependencies
+## 📦 Install Dependencies
 ```bash
 bun install
 ```
 
-# ⚙️ Create Environment File
+## ⚙️ Create Environment File
 ```.env
 NEXT_PUBLIC_URL=https://rata.digitraffic.fi/api/v2/graphql/graphql
 ```
 
-# 🚀 Start the Development Server
+## 🚀 Start the Development Server
 ```bash
 bun dev
 ```
@@ -33,19 +33,19 @@ Visit `http://localhost:3000` in your browser to view the app.
 
 > Make sure [Docker](https://www.docker.com/) is installed on your system.
 
-### 📥 Pull the Image
+## 📥 Pull the Image
 
 ```bash
 docker pull srgdd0/retrain:latest
 ```
 
-# ▶️ Run the Container
+## ▶️ Run the Container
 ```bash
 docker run -p 3000:3000 srgdd0/retrain:latest
 ```
 Visit `http://localhost:3000` in your browser to view the app.
 
-#📚 Tech Stack
+# 📚 Tech Stack
 - ⚙️ Next.js 15
 - 🚅 Bun
 - 🗺 React Leaflet & OpenStreetMap
